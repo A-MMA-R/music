@@ -95,7 +95,7 @@ async def welcome(_, message: Message):
             if member.id == BOT_ID:
                 out = start_pannel()
                 await message.reply_text(
-                    f"""**[👋](https://telegra.ph/file/fa0abbdfcfe3936c6a818.jpg)
+                    f"""**[👋](https://te.legra.ph/file/4d6b1ed9f605e08498938.jpg)
 👋 مرحبًا ، من الجيد أن تكون قادرًا على الانضمام إلى هذه المجموعة
 
 لا تنس أن تجعلني مشرفًا في هذه المجموعة
@@ -123,7 +123,7 @@ async def start(_, message: Message):
 الموسيقى حية.
 
 للمساعدة الرجاء الضغط على الزر أدناه.
-[👋](https://telegra.ph/file/fa0abbdfcfe3936c6a818.jpg)
+[👋](https://te.legra.ph/file/4d6b1ed9f605e08498938.jpg)
 **""",
         reply_markup=InlineKeyboardMarkup(out[1]),
         disable_web_page_preview=True
