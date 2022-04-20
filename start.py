@@ -69,7 +69,7 @@ pstart_markup = InlineKeyboardMarkup(
             InlineKeyboardButton(text=f"•  قناه السورس •", url=f"https://t.me/{CHANNEL}"),
         ],
         [        
-            InlineKeyboardButton(text=f".َ ‹𝙱𝙰𝙽𝙳𝙰 || بـانـدا .𓁷", url=f"https://t.me/X_A_R3"),
+            InlineKeyboardButton(text=f"- َA𝑚𝑚َ𝑎𝑟 , ُ𝑚𝑜ℎ𝑎𝑚ِ𝑒𝑑 .", url=f"https://t.me/X_A_R3"),
         ],
     ]
 )
@@ -142,7 +142,7 @@ async def play(_, message: Message):
 [ᴡᴇʟᴄᴏᴍᴇ ᴛᴏ sᴏᴜʀᴄᴇ ᴍᴜsɪᴄ ](https://telegra.ph/file/49d1630740a01321bd2eb.jpg)
 ꔹ━━ꔹ━ꔹ━━ꔹꔹ━━ꔹ━ꔹ━━ꔹ
 〉 ♬ ᴅᴇᴠ sᴏᴜʀᴄᴇ  : [- َA𝑚𝑚َ𝑎𝑟 , ُ𝑚𝑜ℎ𝑎𝑚ِ𝑒𝑑 .](https://t.me/X_A_R3)
-〉 ♬ sᴏᴜʀᴄᴇ  : [sᴏᴜʀᴄᴇ ᴀᴄᴇ ](https://t.me/L_5_W)
+〉 ♬ sᴏᴜʀᴄᴇ  : [sᴏᴜʀᴄᴇ ᴀᴄᴇ ](https://t.me/V_III_B)
 〉 ♬ ᴄᴏɴᴛᴀᴄᴛ : [ᴄᴏɴᴛᴀᴄᴛ ᴍᴇ ](t.me/X_A_R3)
  ꔹ━━ꔹ━ꔹ━━ꔹꔹ━━ꔹ━ꔹ━━ꔹ**""",
             parse_mode="markdown",
