@@ -81,7 +81,7 @@
         },
         "UPSTREAM_BRANCH": {
             "description": "Nama Cabang Repo kalo tidak tau di /skip",
-            "value": "AMMAR",
+            "value": "A-MMA-R",
             "required": true
         },
         "MONGO_DB_URI": {
