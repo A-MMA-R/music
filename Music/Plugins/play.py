@@ -440,7 +440,7 @@ async def play(_, message: Message):
             what = "Command"
             await LOG_CHAT(message, what)
             user_name = message.from_user.first_name
-            thumb ="https://telegra.ph/file/a7d4219016b38254e8803.jpg"
+            thumb ="https://telegra.ph/file/a0e09a94b8e7fdc688baf.jpg"
             buttons = playlist_markup(user_name, user_id)
             hmo = await message.reply_photo(
             photo=thumb, 
@@ -474,7 +474,7 @@ async def play(_, message: Message):
             return await mystic.edit_text(
                 f"لم يتم العثور على الأغنية.\n**الأسباب المحتملة:** {e} "
             )
-        thumb ="https://telegra.ph/file/a7d4219016b38254e8803.jpg"
+        thumb ="https://telegra.ph/file/a0e09a94b8e7fdc688baf.jpg"
         await mystic.delete()
         buttons = search_markup(ID1, ID2, ID3, ID4, ID5, duration1, duration2, duration3, duration4, duration5, user_id, query)
         hmo = await message.reply_photo(
