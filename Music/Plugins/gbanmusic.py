@@ -12,11 +12,11 @@ from pyrogram import filters
 from pyrogram.errors import FloodWait
 
 
-@app.on_message(filters.command("gban") & filters.user(OWNER))
+@app.on_message(filters.command("حظر ") & filters.user(OWNER))
 async def ban_globally(_, message):
     if not message.reply_to_message:
         if len(message.command) < 2:
-            await message.reply_text("**Penggunaan:**\n/block [USERNAME | USER_ID]")
+            await message.reply_text("**مستخدم:**\n/block [USERNAME | USER_ID]")
             return
         user = message.text.split(None, 2)[1]
         if "@" in user:
@@ -55,12 +55,12 @@ Waktu yang diharapkan: {len(served_chats)}
                 except Exception:
                     pass
             ban_text = f"""
-__**Larangan Global Baru pada Musik**__
-**Asal:** {message.chat.title} [`{message.chat.id}`]
-**Pengguna Sudo:** {from_user.mention}
-**Pengguna yang Diblokir:** {user.mention}
-**ID Pengguna yang diblokir:** `{user.id}`
-**Obrolan:** {number_of_chats}
+____
+** معلومات المجموعة:** {message.chat.title} [`{message.chat.id}`]
+** المحظور :** {from_user.mention}
+** تم الحظر بواسطه:** {user.mention}
+** id banned :** `{user.id}`
+**Obrola:** {number_of_chats}
 """
             try:
                 await m.delete()
