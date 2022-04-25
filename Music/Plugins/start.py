@@ -73,6 +73,23 @@ pstart_markup = InlineKeyboardMarkup(
         ],
     ]
 )
+
+@Client.on_message(command(["لمطور", "طور"]) & filters.group & ~filters.edited)
+async def help(client: Client, message: Message):
+    await message.reply_photo(
+        photo=f"{DEV_PHOTO}",
+        caption=f"""◍ الاول: هو مطور السورس \n◍ الثاني: هو مطور البوت\n√""",
+        reply_markup=InlineKeyboardMarkup(
+         [
+            [
+                InlineKeyboardButton("● ᴀᴍᴍᴀʀ ُᴍᴏʜᴀᴍᴇᴅ ●", url=f"https://t.me/X_A_R3"),
+            ],
+            [
+                InlineKeyboardButton(
+                        DEV_NAME, url=f"https://t.me/{OWNER_NAME}"
+                ),
+            ],
+            [
 welcome_captcha_group = 2
 
 
