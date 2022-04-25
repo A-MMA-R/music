@@ -112,9 +112,9 @@ async def pause_cmd(_, message):
     checking = message.from_user.mention
     chat_id = message.chat.id
     if not await is_active_chat(chat_id):
-        return await message.reply_text("Saya tidak berpikir jika ada sesuatu yang diputar di obrolan suara")
+        return await message.reply_text("ليس هناك شئ يتم تشغيله في الدردشه الصوتيه ❌ ")
     elif not await is_music_playing(message.chat.id):
-        return await message.reply_text("Saya tidak berpikir jika ada sesuatu yang diputar di obrolan suara")   
+        return await message.reply_text("ليس هناك شئ يتم تشغيله في الدردشه الصوتيه ❌")   
     await music_off(chat_id)
     await music.pytgcalls.pause_stream(chat_id)
     await message.reply_text(f"🎧 Obrolan Suara Dijeda oleh {checking}!")
