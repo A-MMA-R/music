@@ -113,11 +113,11 @@ async def activevc(_, message: Message):
         )
 
 
-@app.on_message(filters.command("joinassistant") & filters.user(SUDOERS))
+@app.on_message(filters.command("userbotjoin") & filters.user(SUDOERS))
 async def basffy(_, message):
     if len(message.command) != 2:
         await message.reply_text(
-            "**Penggunaan:**\n/joinassistant [Nama Pengguna Obrolan atau ID Obrolan]"
+            "**Penggunaan:**\n/joinassistant [chat Username or chat id]"
         )
         return
     chat = message.text.split(None, 2)[1]
