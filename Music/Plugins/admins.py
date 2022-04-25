@@ -101,7 +101,7 @@ async def stop_cmd(_, message):
         pass   
     await message.reply_text("Menghapus Database, Antrian, Log, File Mentah, Unduhan.")
     
-@app.on_message(command(["/pause", f"/pause@{BOT_USERNAME}", "ويت"]))
+@app.on_message(command(["/pause", f"/pause@{BOT_USERNAME}", "ويت", "بوت استني"]))
 async def pause_cmd(_, message): 
     if message.sender_chat:
         return await message.reply_text("Kamu adalah __Admin Anonim__!\nKembalikan ke Akun Pengguna.") 
