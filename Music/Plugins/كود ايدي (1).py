@@ -3,7 +3,7 @@ from pyrogram import Client, filters
 from pyrogram.types import Message, InlineKeyboardMarkup, InlineKeyboardButton
 
 
-from config import (
+from Music.config import (
     BOT_PHOTO,
     ALIVE_NAME,
     BOT_NAME,
