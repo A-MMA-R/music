@@ -44,6 +44,28 @@
            "value": "",
            "required": false
         },
+},
+        "OWNER_NAME": {
+            "description": "ضع هنا يوزر المطور بدون علامة @",
+            "required": true,
+            "value": "usddshad"
+        },
+        "BOT_PHOTO": {
+            "description": "ضع لينك صورة البوت من هنا @T_ELEGRAPH00BOT",
+            "required": true
+        },
+        "DEV_PHOTO": {
+            "description": "ضع لينك صورة حساب مطور البوت من هنا @T_ELEGRAPH00BOT",
+            "required": true
+        },
+        "DEV_NAME": {
+            "description": "ضع اسم حساب التليجرام الخاص بالمطور",
+            "required": true
+        },
+        "ALIVE_NAME": {
+            "description": "ضع هنا اسم الحساب المساعد",
+            "required": true,
+            "value": "𝑺𝑯𝑨𝑫𝑶𝑾 𝑴𝑼𝑺𝑰𝑪"
         "GROUP": {
             "description": "Isi dengan username group tanpa @",
             "required": true,
