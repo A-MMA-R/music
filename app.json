@@ -44,7 +44,6 @@
            "value": "",
            "required": false
         },
-},
         "OWNER_NAME": {
             "description": "ضع هنا يوزر المطور بدون علامة @",
             "required": true,
