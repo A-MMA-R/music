@@ -72,6 +72,17 @@ pstart_markup = InlineKeyboardMarkup(
         ],
     ]
 )
+@app.on_message(command("بوت") & filters.group & ~filters.edited)
+async def bott(client: Client, message: Message):
+    await message.reply_text(" البوت قيد التشغيل الان ⚡",
+        reply_markup=InlineKeyboardMarkup(
+                    [
+                        [
+                            InlineKeyboardButton("𝗧𝗲𝗺 𝗘𝗹𝗡𝗾𝗬𝗯™★ ⤶", url=f"https://t.me/barelnqyb")
+                        ]
+                    ]
+                )
+            )
 welcome_captcha_group = 2
 
 @app.on_message(filters.new_chat_members, group=welcome_captcha_group)
