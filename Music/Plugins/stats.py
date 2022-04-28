@@ -21,7 +21,6 @@ from config import (
     DEV_NAME,
     UPDATES_CHANNEL,
 )
-
 import psutil
 from pyrogram import Client
 from pyrogram import __version__ as pyrover
