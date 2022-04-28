@@ -14,6 +14,37 @@ from Music.config import (
     DEV_PHOTO,
     DEV_NAME,
 )
+import re
+import sys
+from os import getenv
+
+from dotenv import load_dotenv
+from pyrogram import filters
+
+load_dotenv()
+
+def get_file_id(msg: Message):
+    if msg.media:
+        for message_type in (
+            "photo",
+            "animation",
+            "audio",
+            "document",
+            "video",
+            "video_note",
+            "voice",
+            # "contact",
+            # "dice",
+            # "poll",
+            # "location",
+            # "venue",
+            "sticker",
+        ):
+            obj = getattr(msg, message_type)
+            if obj:
+                setattr(obj, "message_type", message_type)
+                return obj
+
 @app.on_message(
     command(["ايدي"])
     & filters.group
