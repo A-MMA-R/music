@@ -1,14 +1,21 @@
-# كل سنة ونت طيب يخويا  . 
-# كود ايدي بـ صورة الشخص وزرار يدخل ع شات الشخص و بيجيب يوزر و ايدي و اسم و ايدي الجروب لـ الشخص  . 
-
-
-# اتأكد من تنصيب المكآتب . 
 import asyncio
 from pyrogram import Client, filters
 from pyrogram.types import Message, InlineKeyboardMarkup, InlineKeyboardButton
 
-# الكود اهو يصحبي  . 
 
+from config import (
+    BOT_PHOTO,
+    ALIVE_NAME,
+    BOT_NAME,
+    BOT_USERNAME,
+    GROUP_SUPPORT,
+    OWNER_NAME,
+    SUDO_USERS,
+    BOT_TOKEN,
+    DEV_PHOTO,
+    DEV_NAME,
+    UPDATES_CHANNEL,
+)
 @app.on_message(
     command(["ايدي"])
     & filters.group
@@ -28,11 +35,4 @@ async ah madison(client: Client, message: Message):
             ]
         ),
     )
-
-# بس كدا يقلبي الكود هيشتغل معاك  . 
-# لو معرفتش تشغلو كلمني هنا  . 
-# يوزري : @MaDyY_y
-# قناة السورس : @so_alfaa
-# دعم السورس : @LURA205
-
-# بس كدا جرب و آدعيلي وخش القناة عشان تشوف باقي الاكواد ♥. 
+ 
