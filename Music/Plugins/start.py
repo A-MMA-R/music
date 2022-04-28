@@ -2,11 +2,7 @@ import asyncio
 import yt_dlp
 import psutil
 import asynico
-import re
-import sys 
 
-from os import getenv
-from config import BANNED_USERS, MUSIC_BOT_NAME
 from Music.config import GROUP, CHANNEL
 from Music import (
     ASSID,
@@ -77,103 +73,7 @@ pstart_markup = InlineKeyboardMarkup(
         ],
     ]
 )
-load_dotenv()
 
-BOT_USERNAME = getenv("BOT_USERNAME")
-
-OWNER = getenv("OWNER")
-
-ID_BOT1 = getenv("ID_BOT1")
-
-NAME_BOT = getenv("NAME_BOT")
-
-DEV = getenv("DEV")
-
-def get_file_id(msg: Message):
-
-    if msg.media:
-
-        for message_type in (
-
-            "photo",
-
-            "animation",
-
-            "audio",
-
-            "document",
-
-            "video",
-
-            "video_note",
-
-            "voice",
-
-            # "contact",
-
-            # "dice",
-
-            # "poll",
-
-            # "location",
-
-            # "venue",
-
-            "sticker",
-
-        ):
-
-            obj = getattr(msg, message_type)
-
-            if obj:
-
-                setattr(obj, "message_type", message_type)
-
-                return obj
-
-@app.on_message(
-
-    command(["البوت"])
-
-    & filters.group
-
-    & ~filters.edited
-
-)
-
-async def khalid(client: Client, message: Message):
-
-    usr = await client.get_users(ID_BOT1)
-
-    name = usr.first_name
-
-    async for photo in client.iter_profile_photos(ID_BOT1, limit=1):
-
-                    await message.reply_photo(photo.file_id,       caption=f"اسمي {NAME_BOT} يقلبي 🙄💕", 
-
-        reply_markup=InlineKeyboardMarkup(
-
-            [
-
-                [
-
-                    InlineKeyboardButton(
-
-                        "- Devoleper Bot .", url=f"https://t.me/{OWNER}") 
-
-                ],[
-
-                    InlineKeyboardButton(
-
-                        "اضف البوت الي مجموعتك", url=f"https://t.me/{BOT_USERNAME}?startgroup=true"),
-
-                ],
-
-            ]
-
-        ),
-
-    )
 welcome_captcha_group = 2
 
 
