@@ -21,7 +21,8 @@ from Music.config import (
     & filters.group
     & ~filters.edited
 )
- async (client: Client, message: Message):
+
+async (client: Client, message: Message):
     usr = await client.get_users(message.from_user.id)
     name = usr.first_name
     async for photo in client.iter_profile_photos(message.from_user.id, limit=1):
