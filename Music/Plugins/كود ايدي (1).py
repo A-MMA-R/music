@@ -8,13 +8,11 @@ from Music.config import (
     ALIVE_NAME,
     BOT_NAME,
     BOT_USERNAME,
-    GROUP_SUPPORT,
     OWNER_NAME,
     SUDO_USERS,
     BOT_TOKEN,
     DEV_PHOTO,
     DEV_NAME,
-    UPDATES_CHANNEL,
 )
 @app.on_message(
     command(["ايدي"])
