@@ -1,14 +1,22 @@
 ##Config
 
+import os
 from os import getenv
 from dotenv import load_dotenv
 
 load_dotenv()
 get_queue = {}
 SESSION_NAME = getenv('SESSION_NAME', 'session')
+BOT_NAME = getenv("BOT_NAME")
 BOT_TOKEN = getenv('BOT_TOKEN')
 API_ID = int(getenv('API_ID', "16063372"))
 API_HASH = getenv('API_HASH')
+OWNER_NAME = getenv("OWNER_NAME")
+ALIVE_NAME = getenv("ALIVE_NAME")
+BOT_PHOTO = getenv("BOT_PHOTO")
+DEV_PHOTO = getenv("DEV_PHOTO")
+DEV_NAME = getenv("DEV_NAME")
+BOT_USERNAME = getenv("BOT_USERNAME")
 DURATION_LIMIT = int(getenv('DURATION_LIMIT', '30'))
 COMMAND_PREFIXES = list(getenv('COMMAND_PREFIXES', '').split())
 MONGO_DB_URI = getenv("MONGO_DB_URI")
