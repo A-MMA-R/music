@@ -178,7 +178,7 @@ async def stats_markup(_, CallbackQuery):
     if command == "wait_stats":
         await CallbackQuery.answer()
 
-@Client.on_message(command(["لمطور", "طور"]) & filters.group & ~filters.edited)
+@Client.on_message(command(["المطور"]) & filters.group & ~filters.edited)
 async def help(client: Client, message: Message):
     await message.reply_photo(
         photo=f"{DEV_PHOTO}",
