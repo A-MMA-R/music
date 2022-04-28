@@ -9,18 +9,6 @@ import uuid
 from datetime import datetime
 from sys import version as pyver
 
-from config import (
-    BOT_PHOTO,
-    ALIVE_NAME,
-    BOT_USERNAME,
-    GROUP_SUPPORT,
-    OWNER_NAME,
-    SUDO_USERS,
-    BOT_TOKEN,
-    DEV_PHOTO,
-    DEV_NAME,
-    UPDATES_CHANNEL,
-)
 import psutil
 from pyrogram import Client
 from pyrogram import __version__ as pyrover
