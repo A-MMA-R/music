@@ -8,10 +8,10 @@ import time
 import uuid
 from datetime import datetime
 from sys import version as pyver
+
 from config import (
     BOT_PHOTO,
     ALIVE_NAME,
-    BOT_NAME,
     BOT_USERNAME,
     GROUP_SUPPORT,
     OWNER_NAME,
