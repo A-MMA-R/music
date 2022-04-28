@@ -177,25 +177,3 @@ async def stats_markup(_, CallbackQuery):
         await CallbackQuery.edit_message_text(smex, reply_markup=stats1)
     if command == "wait_stats":
         await CallbackQuery.answer()
-
-@Client.on_message(command(["المطور"]) & filters.group & ~filters.edited)
-async def help(client: Client, message: Message):
-    await message.reply_photo(
-        photo=f"{DEV_PHOTO}",
-        caption=f"""◍ الاول: هو مطور السورس \n◍ الثاني: هو مطور البوت\n√""",
-        reply_markup=InlineKeyboardMarkup(
-         [
-            [
-                InlineKeyboardButton("● ᴀᴍᴍᴀʀ ُᴍᴏʜᴀᴍᴇᴅ ●", url=f"https://t.me/X_A_R3"),
-            ],
-            [
-                InlineKeyboardButton(
-                        DEV_NAME, url=f"https://t.me/{OWNER_NAME}"
-                ),
-            ],
-            [
-                InlineKeyboardButton("ضيـف البـوت لمجمـوعتـك ✅", url=f"https://t.me/{BOT_USERNAME}?startgroup=true"),
-            ]
-         ]
-     )
-  )
