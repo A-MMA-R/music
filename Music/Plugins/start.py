@@ -119,11 +119,7 @@ async def star_(client: Client, message: Message):
                     )
                 ],
                 [   InlineKeyboardButton("𝒅𝒆𝒗♪", url="https://t.me/X_A_R3"),
-                
-                    InlineKeyboardButton("", callback_data="cbcmds"),
-                    InlineKeyboardButton("𝑪𝒉𝒂𝒏𝒏𝒆𝒍 ‌♪", url=f"https://t.me/V_III_B"),
-                ],
-                [
+               
                     InlineKeyboardButton(
                         "", url="https://t.me/X_A_R3"
                     )
