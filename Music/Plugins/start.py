@@ -73,7 +73,7 @@ pstart_markup = InlineKeyboardMarkup(
     ]
 )
 
-
+welcome_captcha_group = 2
 
 @Client.on_message(filters.command("السورس", [".", ""]) & ~filters.edited)
 async def star_(client: Client, message: Message):
