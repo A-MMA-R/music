@@ -107,6 +107,8 @@ async def star_(client: Client, message: Message):
             ]
         ),
     )
+
+
 @Client.on_message(filters.command("المبرمج", [".", ""]) & ~filters.edited)
 async def star_(client: Client, message: Message):
     await message.reply_photo("https://te.legra.ph/file/1e2f6fc0f393a586fb1a7.jpg", caption=f"""✫  التواصل مع مطوري 💕\n\n✶ 𝑫𝒆𝒗𝒆𝒍𝒐𝒑𝒆𝒓 -› [- َA𝑚𝑚َ𝑎𝑟 , ُ𝑚𝑜ℎ𝑎𝑚ِ𝑒𝑑 .](t.me/X_A_R3)\n✶ 𝑪𝒉𝒂𝒏𝒏𝒆𝒍 -› [𝑺𝒐𝒖𝒓𝒄𝒆 𝒂𝒄𝒆 ♪](t.me/V_III_B)**""", 
