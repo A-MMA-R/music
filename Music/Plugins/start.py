@@ -15,7 +15,7 @@ from Music import (
 from Music.MusicUtilities.database.chats import is_served_chat
 from Music.MusicUtilities.database.queue import remove_active_chat
 from Music.MusicUtilities.database.sudo import get_sudoers
-from Music.filters import command
+from Music.MusicUtilities.filters import command
 from Music.MusicUtilities.database.assistant import (_get_assistant, get_as_names, get_assistant,
                         save_assistant)
 from Music.MusicUtilities.database.auth import (_get_authusers, add_nonadmin_chat, delete_authuser,
