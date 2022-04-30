@@ -180,7 +180,9 @@ async def start(_, message: Message):
         reply_markup=InlineKeyboardMarkup(out[1]),
         disable_web_page_preview=True
     )
-    return@Client.on_message(filters.private & filters.incoming & filters.command("start"))
+    return
+
+@Client.on_message(filters.private & filters.incoming & filters.command("start"))
 async def play(_, message: Message):
     if len(message.command) == 1:
         user_id = message.from_user.id
