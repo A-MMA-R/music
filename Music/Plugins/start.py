@@ -79,7 +79,7 @@ def start_pannel():
         ],
         [
             InlineKeyboardButton(text=f"•  الاوامر •", url=f"https://telegra.ph/Ammar-04-19-2"),
-            InlineKeyboardButton(text=f"• المطور •", url=f"https://t.me/X_A_R3"),
+            InlineKeyboardButton(text=f"• 𝒅𝒆𝒗𝒆𝒍𝒐𝒑𝒆𝒓 𝒃𝒐𝒕 •", url=f"https://t.me/{OWNER}"),
         ],
         ]
     return (
@@ -134,11 +134,13 @@ async def star_(client: Client, message: Message):
         ),
     )
 
-@app.on_message(
-    command(["مطور", f"مطور@{BOT_USERNAME"])
-    & filters.group
-    & ~filters.edited
-)
+
+@Client.on_message(
+    filters.group
+    & command(
+        ["مطور", f"مطور@{BOT_USERNAME}"]
+    )
+
 async def khalid(client: Client, message: Message):
     usr = await client.get_users(BOTID)
     name = usr.first_name
@@ -175,7 +177,7 @@ async def welcome(_, message: Message):
             if member.id == BOT_ID:
                 out = start_pannel()
                 await message.reply_text(
-                    f"""**[👋](https://telegra.ph/file/49d1630740a01321bd2eb.jpg)
+                    f"""**[👋](https://te.legra.ph/file/258203cbe1a15cbf36bbd.jpg)
 👋 مرحبًا ، من الجيد أن تكون قادرًا على الانضمام إلى هذه المجموعة
 
 لا تنس أن تجعلني مشرفًا في هذه المجموعة
