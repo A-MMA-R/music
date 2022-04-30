@@ -135,7 +135,7 @@ async def star_(client: Client, message: Message):
     )
 
 @app.on_message(
-    command(["مطور"])
+    command(["مطور", f"مطور@{BOT_USERNAME"])
     & filters.group
     & ~filters.edited
 )
