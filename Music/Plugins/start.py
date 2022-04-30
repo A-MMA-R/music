@@ -74,6 +74,7 @@ def start_pannel():
         ],
         [
             InlineKeyboardButton(text=f"•  الاوامر •", url=f"https://telegra.ph/Ammar-04-19-2"),
+            InlineKeyboardButton(text=f"• المطور •", url=f"https://t.me/X_A_R3}"),
         ],
     ]
     return (
@@ -159,38 +160,27 @@ async def welcome(_, message: Message):
             return
 
 
-@Client.on_message(
+@@Client.on_message(
+
     filters.group
-    & command(
-        ["start", "help", f"start@{BOT_USERNAME}", f"help@{BOT_USERNAME}", "بوت", f"بوت@{BOT_USERNAME}"]
+
+    & filters.command(
+        ["start", "help", "بوت", f"start@{BOT_USERNAME}", f"help@{BOT_USERNAME}", f"@بوت{BOT_USERNAME}"]
     )
 )
-async def Khalid(client: Client, message: Message):
+async def start(_, message: Message):
     chat_id = message.chat.id
-    usr = await client.get_users(BOTID)
-    name = usr.first_name
-    async for photo in client.iter_profile_photos(BOTID, limit=1):
-                    await message.reply_photo(photo.file_id,
-       caption=f"""[𝒃𝒐𝒕 𝒊𝒔 𝒘𝒐𝒓𝒌𝒊𝒏𝒈. ](https://t.me/{DEV_BOT})""", 
-        reply_markup=InlineKeyboardMarkup(
-            [
-                [
-                   InlineKeyboardButton(
-                        "𝆥 𝒔𝒖𝒑𝒑𝒐𝒓𝒕 .", url=f"https://t.me/{GROUP}"),
-                   InlineKeyboardButton(
-                        "𝆥 𝑪𝒉𝒂𝒏𝒏𝒆𝒍 .", url=f"https://t.me/{CHANNEL}"),
-                ],[
-                   InlineKeyboardButton(
-                        "𝆥 𝒅𝒆𝒗 .", url=f"https://t.me/{DEV_BOT}"),
-                ],[
-                   InlineKeyboardButton(
-                        "اضف البوت الي مجموعتك", url=f"https://t.me/{BOT_USERNAME}?startgroup=true"),
-                ],
-            ]
-        ),
-    ) 
+    out = start_pannel()
+    await message.reply_text(
+        f"""**[👋](https://telegra.ph/file/2875489dea129c629dbdc.jpg)  شكرا لتشغيلي في مجموعتك💕.{message.chat.title}
+.
 
-@Client.on_message(filters.private & filters.incoming & filters.command("start"))
+للمساعدة الرجاء الضغط على الزر أدناه.
+**""",
+        reply_markup=InlineKeyboardMarkup(out[1]),
+        disable_web_page_preview=True
+    )
+    return@Client.on_message(filters.private & filters.incoming & filters.command("start"))
 async def play(_, message: Message):
     if len(message.command) == 1:
         user_id = message.from_user.id
