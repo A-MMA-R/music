@@ -203,7 +203,7 @@ async def welcome(_, message: Message):
 
 )
 
-async def start(client: Client, message: Message):
+async def Khalid(client: Client, message: Message):
     chat_id = message.chat.id
     usr = await client.get_users(BOTID)
     name = usr.first_name
