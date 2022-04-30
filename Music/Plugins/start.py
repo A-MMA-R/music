@@ -129,6 +129,29 @@ async def star_(client: Client, message: Message):
         ),
     )
 
+@app.on_message(
+    command(["مطور"])
+    & filters.group
+    & ~filters.edited
+)
+async def khalid(client: Client, message: Message):
+    usr = await client.get_users(BOTID)
+    name = usr.first_name
+    async for photo in client.iter_profile_photos(BOTID, limit=1):
+                    await message.reply_photo(photo.file_id,       caption=f"""[𝒅𝒆𝒗𝒆𝒍𝒐𝒑𝒆𝒓 𝒃𝒐𝒕 💕. ](https://t.me/{OWNER})""", 
+        reply_markup=InlineKeyboardMarkup(
+            [
+                [
+                    InlineKeyboardButton(
+                        name, url=f"https://t.me/{OWNER}")
+                ],[
+                    InlineKeyboardButton(
+                        "اضف البوت الي مجموعتك", url=f"https://t.me/{BOT_USERNAME}?startgroup=true"),
+                ],
+            ]
+        ),
+    )
+
 @app.on_message(filters.new_chat_members, group=welcome_captcha_group)
 async def welcome(_, message: Message):
     chat_id = message.chat.id
