@@ -1,7 +1,7 @@
 import asyncio
 from pyrogram import Client, filters
 from Music.MusicUtilities.helpers.filters import command
-from Music.MusicUtilities import get command
+from Music.MusicUtilities.helpers.filtees import get command
 from pyrogram.types import Message, InlineKeyboardMarkup, InlineKeyboardButton
 
 
