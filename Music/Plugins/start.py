@@ -196,7 +196,7 @@ async def welcome(_, message: Message):
 @Client.on_message(
     filters.group
     & command(
-        ["start", "help", f"start@{BOT_USERNAME}", f"help@{BOT_USERNAME}", "البوت", f"بوت@{BOT_USERNAME}"]
+        ["start", "help", f"start@{BOT_USERNAME}", f"help@{BOT_USERNAME}", "البوت", f"البوت@{BOT_USERNAME}"]
     )
 )
 async def start(client: Client, message: Message):
