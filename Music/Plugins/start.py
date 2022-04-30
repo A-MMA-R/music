@@ -29,6 +29,7 @@ from Music.MusicUtilities.helpers.thumbnails import down_thumb
 from Music.MusicUtilities.helpers.ytdl import ytdl_opts
 from Music.MusicUtilities.tgcallsrun.music import pytgcalls
 from pyrogram import Client, filters
+import command
 import re
 import sys
 from os import getenv
