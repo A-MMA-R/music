@@ -74,9 +74,9 @@ def start_pannel():
         ],
         [
             InlineKeyboardButton(text=f"•  الاوامر •", url=f"https://telegra.ph/Ammar-04-19-2"),
-            InlineKeyboardButton(text=f"• المطور •", url=f"https://t.me/X_A_R3}"),
+            InlineKeyboardButton(text=f"• المطور •", url=f"https://t.me/X_A_R3"),
         ],
-    ]
+        ]
     return (
         "🎛 **{BOT_NAME} هو بوت تشغيل اغاني وفيدوهات في الدردشة الصوتية لمجموعتك**",
         buttons,
