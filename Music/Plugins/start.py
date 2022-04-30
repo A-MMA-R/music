@@ -106,7 +106,7 @@ pstart_markup = InlineKeyboardMarkup(
             InlineKeyboardButton(text=f"•  قناة السورس •", url=f"https://t.me/{CHANNEL}"),
         ],
         [        
-            InlineKeyboardButton(text=f" 𝒅𝒆𝒗𝒆𝒍𝒐𝒑𝒆𝒓 𝒃𝒐𝒕 ", url=f"https://t.me/{DEV_BOT"),
+            InlineKeyboardButton("𝒅𝒆𝒗𝒆𝒍𝒐𝒑𝒆𝒓 𝒃𝒐𝒕 ", url=f"https://t.me/{DEV_BOT}"),
         ],
     ]
 )
