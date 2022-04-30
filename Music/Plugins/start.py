@@ -193,16 +193,12 @@ async def welcome(_, message: Message):
             return
 
 
-@app.on_message(
-
-    command(["البوت"])
-
-    & filters.group
-
-    & ~filters.edited
-
+@Client.on_message(
+    filters.group
+    & command(
+        ["start", "help", f"start@{BOT_USERNAME}", f"help@{BOT_USERNAME}", "بوت", f"بوت@{BOT_USERNAME}"]
+    )
 )
-
 async def Khalid(client: Client, message: Message):
     chat_id = message.chat.id
     usr = await client.get_users(BOTID)
