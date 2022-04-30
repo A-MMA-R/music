@@ -79,7 +79,7 @@ def start_pannel():
         ],
         [
             InlineKeyboardButton(text=f"•  الاوامر •", url=f"https://telegra.ph/Ammar-04-19-2"),
-            InlineKeyboardButton(text=f"• 𝒅𝒆𝒗𝒆𝒍𝒐𝒑𝒆𝒓 𝒃𝒐𝒕 •", url=f"https://t.me/{OWNER}"),
+            InlineKeyboardButton(text=f"• 𝒐𝒘𝒏𝒆𝒓 𝒔𝒐𝒖𝒓𝒄𝒆 •", url=f"https://t.me/X_A_R3"),
         ],
         ]
     return (
@@ -106,7 +106,7 @@ pstart_markup = InlineKeyboardMarkup(
             InlineKeyboardButton(text=f"•  قناة السورس •", url=f"https://t.me/{CHANNEL}"),
         ],
         [        
-            InlineKeyboardButton(text=f"- َA𝑚𝑚َ𝑎𝑟 , ُ𝑚𝑜ℎ𝑎𝑚ِ𝑒𝑑 .", url=f"https://t.me/X_A_R3"),
+            InlineKeyboardButton(text=f" 𝒅𝒆𝒗𝒆𝒍𝒐𝒑𝒆𝒓 𝒃𝒐𝒕 ", url=f"https://t.me/{DEV_BOT"),
         ],
     ]
 )
@@ -141,20 +141,23 @@ async def star_(client: Client, message: Message):
         ["مطور", f"مطور@{BOT_USERNAME}"]
     )
 
-async def khalid(client: Client, message: Message):
-    usr = await client.get_users(BOTID)
+
+async def start(client: Client, message: Message):
+    chat_id = message.chat.id
+    usr = await client.get_users(DEV_BOT)
     name = usr.first_name
-    async for photo in client.iter_profile_photos(BOTID, limit=1):
-                    await message.reply_photo(photo.file_id,       caption=f"""[𝒅𝒆𝒗𝒆𝒍𝒐𝒑𝒆𝒓 𝒃𝒐𝒕 💕. ](https://t.me/{OWNER})""", 
+    async for photo in client.iter_profile_photos(DEV_BOT1, limit=1):
+                    await message.reply_photo(photo.file_id,
+       caption=f"""[𝒅𝒆𝒗𝒆𝒍𝒐𝒑𝒆𝒓 𝒃𝒐𝒕 💕](https://t.me/{DEV_BOT})""", 
         reply_markup=InlineKeyboardMarkup(
             [
                 [
-                    InlineKeyboardButton(
-                        name, url=f"https://t.me/{OWNER}")
-                ],[
-                    InlineKeyboardButton(
-                        "اضف البوت الي مجموعتك", url=f"https://t.me/{BOT_USERNAME}?startgroup=true"),
+                   InlineKeyboardButton(
+                        "« 𝒔𝒖𝒑𝒑𝒐𝒓𝒕 »", url=f"https://t.me/{GROUP}"),
+                   InlineKeyboardButton(
+                        "« 𝒄𝒉𝒂𝒏𝒏𝒆𝒍 »", url=f"https://t.me/{CHANNEL}"),
                 ],
+
             ]
         ),
     )
