@@ -15,10 +15,12 @@ from Music import (
 from Music.MusicUtilities.database.chats import is_served_chat
 from Music.MusicUtilities.database.queue import remove_active_chat
 from Music.MusicUtilities.database.sudo import get_sudoers
+from Music.filters import command
 from Music.MusicUtilities.database.assistant import (_get_assistant, get_as_names, get_assistant,
                         save_assistant)
 from Music.MusicUtilities.database.auth import (_get_authusers, add_nonadmin_chat, delete_authuser,
-                        get_authuser, get_authuser_count, get_authuser_names,                  is_nonadmin_chat, remove_nonadmin_chat, save_authuser)
+                   get_authuser, get_authuser_count, get_authuser_names,
+                   is_nonadmin_chat, remove_nonadmin_chat, save_authuser)
 from Music.MusicUtilities.database.blacklistchat import blacklist_chat, blacklisted_chats, whitelist_chat
 from Music.MusicUtilities.helpers.admins import ActualAdminCB
 from Music.MusicUtilities.helpers.inline import personal_markup, setting_markup
@@ -28,12 +30,42 @@ from Music.MusicUtilities.helpers.thumbnails import down_thumb
 from Music.MusicUtilities.helpers.ytdl import ytdl_opts
 from Music.MusicUtilities.tgcallsrun.music import pytgcalls
 from pyrogram import Client, filters
+import re
+import sys
+from os import getenv
 from pyrogram.types import (
     InlineKeyboardButton,
     InlineKeyboardMarkup,
     Message,
 )
 
+DEV_BOT = getenv("DEV_BOT")
+BOTID = getenv("BOTID")
+DEVID = getenv("DEVID")
+NAME_BOT = getenv("NAME_BOT")
+
+def get_file_id(msg: Message):
+    if msg.media:
+        for message_type in (
+            "photo",
+            "animation",
+            "audio",
+            "document",
+            "video",
+            "video_note",
+            "voice",
+            # "contact",
+            # "dice",
+            # "poll",
+            # "location",
+            # "venue",
+            "sticker",
+        ):
+            obj = getattr(msg, message_type)
+            if obj:
+                setattr(obj, "message_type", message_type)
+                return obj
+                
 def start_pannel():
     buttons = [
         [
@@ -163,24 +195,34 @@ async def welcome(_, message: Message):
 
 @Client.on_message(
     filters.group
-    & filters.command(
-        ["start", "help", f"start@{BOT_USERNAME}", f"help@{BOT_USERNAME}"]
+    & command(
+        ["start", "help", f"start@{BOT_USERNAME}", f"help@{BOT_USERNAME}", "البوت", f"بوت@{BOT_USERNAME}"]
     )
 )
-async def start(_, message: Message):
+async def start(client: Client, message: Message):
     chat_id = message.chat.id
-    out = start_pannel()
-    await message.reply_text(
-        f"""**[👋](https://telegra.ph/file/49d1630740a01321bd2eb.jpg)
-شكرًا لإدراجي في {message.chat.title}.
-الموسيقى حية.
-
-للمساعدة الرجاء الضغط على الزر أدناه.
-**""",
-        reply_markup=InlineKeyboardMarkup(out[1]),
-        disable_web_page_preview=True
-    )
-    return
+    usr = await client.get_users(BOTID)
+    name = usr.first_name
+    async for photo in client.iter_profile_photos(BOTID, limit=1):
+                    await message.reply_photo(photo.file_id,
+       caption=f"""[𝒃𝒐𝒕 𝒊𝒔 𝒘𝒐𝒓𝒌𝒊𝒏𝒈. ](https://t.me/{DEV_BOT})""", 
+        reply_markup=InlineKeyboardMarkup(
+            [
+                [
+                   InlineKeyboardButton(
+                        "𝆥 𝒔𝒖𝒑𝒑𝒐𝒓𝒕 .", url=f"https://t.me/{GROUP}"),
+                   InlineKeyboardButton(
+                        "𝆥 𝑪𝒉𝒂𝒏𝒏𝒆𝒍 .", url=f"https://t.me/{CHANNEL}"),
+                ],[
+                   InlineKeyboardButton(
+                        "𝆥 𝒅𝒆𝒗 .", url=f"https://t.me/{DEV_BOT}"),
+                ],[
+                   InlineKeyboardButton(
+                        "اضف البوت الي مجموعتك", url=f"https://t.me/{BOT_USERNAME}?startgroup=true"),
+                ],
+            ]
+        ),
+    ) 
 
 @Client.on_message(filters.private & filters.incoming & filters.command("start"))
 async def play(_, message: Message):
