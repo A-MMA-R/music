@@ -136,12 +136,16 @@ async def star_(client: Client, message: Message):
 
 
 @Client.on_message(
+    
     filters.group
+
     & command(
+
         ["مطور", f"مطور@{BOT_USERNAME}"]
+
     )
 
-
+)
 async def start(client: Client, message: Message):
     chat_id = message.chat.id
     usr = await client.get_users(DEV_BOT)
