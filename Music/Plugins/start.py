@@ -160,7 +160,7 @@ async def welcome(_, message: Message):
             return
 
 
-@@Client.on_message(
+@Client.on_message(
 
     filters.group
 
