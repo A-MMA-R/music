@@ -39,6 +39,16 @@ from pyrogram.types import (
     Message,
 )
 
+load_dotenv()
+
+BOT_USERNAME = getenv("BOT_USERNAME")
+
+IMG_DEV1 = getenv("IMG_DEV1")
+
+OWNER = getenv("OWNER")
+
+BOTID = getenv("BOTID")
+
 DEV_BOT = getenv("DEV_BOT")
 BOTID = getenv("BOTID")
 DEVID = getenv("DEVID")
