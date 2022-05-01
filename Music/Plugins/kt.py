@@ -46,8 +46,6 @@ __major__ = 0
 __minor__ = 2
 __micro__ = 1
 
-__python_version__ = f"{version_info[0]}.{version_info[1]}.{version_info[2]}"
-
 
 START_TIME = datetime.utcnow()
 START_TIME_ISO = START_TIME.replace(microsecond=0).isoformat()
