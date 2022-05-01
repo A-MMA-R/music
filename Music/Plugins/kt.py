@@ -1302,8 +1302,7 @@ def searchMusic(c, m):
         ]
         word = random.choice(text)
         m.reply(word)
-    except Exception as e:
-        m.reply("حدث خطا راسل المطور\n- @X_A_R3")
+    
 
 @Client.on_message(command(["Kstop", f"Kstop@fi0nabot", "تعطيل الكت"]) & ~filters.edited)
 @authorized_users_only
