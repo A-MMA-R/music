@@ -141,7 +141,7 @@ async def welcome(_, message: Message):
 
 
 @Client.on_message(filters.command("مطور", [".", ""]) & ~filters.edited)
-async def start(client: Client, message: Message):
+async def Khalid(client: Client, message: Message):
     chat_id = message.chat.id
     usr = await client.get_users(DEV_BOT)
     name = usr.first_name
@@ -160,38 +160,6 @@ async def start(client: Client, message: Message):
                         name, url=f"https://t.me/{DEV_BOT}"),
 
                 ],
-            ]
-        ),
-    )
-
-
-@Client.on_message(
-    
-    filters.group
-
-    & command(
-
-        ["مبرمج", f"مبرمج@{BOT_USERNAME}"]
-
-    )
-
-)
-async def start(client: Client, message: Message):
-    chat_id = message.chat.id
-    usr = await client.get_users(DEV_BOT)
-    name = usr.first_name
-    async for photo in client.iter_profile_photos(DEV_BOT1, limit=1):
-                    await message.reply_photo(photo.file_id,
-       caption=f"""[𝒅𝒆𝒗𝒆𝒍𝒐𝒑𝒆𝒓 𝒃𝒐𝒕 💕](https://t.me/{DEV_BOT})""", 
-        reply_markup=InlineKeyboardMarkup(
-            [
-                [
-                   InlineKeyboardButton(
-                        "« 𝒔𝒖𝒑𝒑𝒐𝒓𝒕 »", url=f"https://t.me/{GROUP}"),
-                   InlineKeyboardButton(
-                        "« 𝒄𝒉𝒂𝒏𝒏𝒆𝒍 »", url=f"https://t.me/{CHANNEL}"),
-                ],
-
             ]
         ),
     )
