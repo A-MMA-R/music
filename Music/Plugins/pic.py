@@ -18,11 +18,6 @@ from pyrogram.types import (
     Message,
 )
 
-BOTID = getenv("BOTID")
-DEVID = getenv("DEVID")
-DEV_BOT1 = getenv("DEV_BOT1")
-NAME_BOT = getenv("NAME_BOT")
-
 def get_file_id(msg: Message):
     if msg.media:
         for message_type in (
