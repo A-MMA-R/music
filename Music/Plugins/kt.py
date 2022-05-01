@@ -1278,6 +1278,7 @@ def searchMusic(c, m):
         m.reply("حدث خطا راسل المطور\n- @X_A_R3")
 
 @Client.on_message(command(["Kstop", f"Kstop@fi0nabot", "تعطيل الكت"]) & ~filters.edited)
+@authorized_users_only
 async def stop_filter(client: Client, message: Message):
     start = time()
     m_reply = await message.reply_text(
@@ -1292,6 +1293,7 @@ async def stop_filter(client: Client, message: Message):
 
     
 @Client.on_message(filters.command("فيونا اقفلي الكت", [".", ""]) & ~filters.edited)
+@authorized_users_only
 async def stop_filterr(client: Client, message: Message):
     start = time()
     m_reply = await message.reply_text(
@@ -1305,6 +1307,7 @@ async def stop_filterr(client: Client, message: Message):
     )
 
 @Client.on_message(command(["Kstart", f"Kstart@fi0nabot"]) & ~filters.edited)
+@authorized_users_only
 async def start_filter(client: Client, message: Message):
     start = time()
     m_reply = await message.reply_text(
@@ -1318,6 +1321,7 @@ async def start_filter(client: Client, message: Message):
     )
     
 @Client.on_message(filters.command("فيونا شغلي الكت", [".", ""]) & ~filters.edited)
+@authorized_users_only
 async def start_filterrr(client: Client, message: Message):
     start = time()
     m_reply = await message.reply_text(
