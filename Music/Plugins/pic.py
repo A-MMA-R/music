@@ -6,12 +6,7 @@ from pyrogram.types import (
     Message,
 )
 
-@app.on_message(
-    command(["صوري"])
-    & filters.group
-    & ~filters.edited
-)
-
+@app.on_message(command(["/pics"]) & filters.group)
 async def Khalid(client: Client, message: Message):
     usr = await client.get_users(message.from_user.id)
     name = usr.first_name
