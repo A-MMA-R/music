@@ -18,7 +18,6 @@ from pyrogram.types import (
     Message,
 )
 
-DEV_BOT = getenv("DEV_BOT")
 BOTID = getenv("BOTID")
 DEVID = getenv("DEVID")
 DEV_BOT1 = getenv("DEV_BOT1")
