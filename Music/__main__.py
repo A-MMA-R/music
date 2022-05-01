@@ -3,6 +3,8 @@ import time
 import uvloop
 import importlib
 from pyrogram import Client
+
+from Music.MusicUtilities.helpers.decorators import nothingmuch as startapp
 from Music.config import API_ID, API_HASH, BOT_TOKEN, MONGO_DB_URI, SUDO_USERS, LOG_GROUP_ID
 from Music import BOT_NAME, ASSNAME, app, client
 from Music.MusicUtilities.database.functions import clean_restart_stage
