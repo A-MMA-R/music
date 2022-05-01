@@ -31,6 +31,8 @@ from config import (
     BOT_TOKEN
 
 )
+
+
 @Client.on_message(command(["Kstop", f"Kstop@NKQBoT", "تعطيل الكت"]) & ~filters.edited)
 
 @authorized_users_only
