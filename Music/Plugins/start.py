@@ -39,15 +39,12 @@ from pyrogram.types import (
     Message,
 )
 
-
-
-BOT_USERNAME = getenv("BOT_USERNAME")
-IMG_DEV1 = getenv("IMG_DEV1")
-OWNER = getenv("OWNER")
 DEV_BOT = getenv("DEV_BOT")
 BOTID = getenv("BOTID")
 DEVID = getenv("DEVID")
+DEV_BOT1 = getenv("DEV_BOT1")
 NAME_BOT = getenv("NAME_BOT")
+
 
 def get_file_id(msg: Message):
     if msg.media:
