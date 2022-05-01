@@ -68,6 +68,63 @@ async def _human_time_duration(seconds):
             parts.append("{} {}{}".format(amount, unit, "" if amount == 1 else "s"))
     return ", ".join(parts)
 
+@Client.on_message(command(["Kstop", f"Kstop@fi0nabot", "تعطيل الكت"]) & ~filters.edited)
+@authorized_users_only
+async def stop_filter(client: Client, message: Message):
+    start = time()
+    m_reply = await message.reply_text(
+        f"- اهلا حياتي 💕 {message.from_user.mention()}\n-  تم تعطيل امر كت"
+    )
+    obj = settingsApp.BotSettings()
+    obj.edit_in_file("open", "no")
+    delta_ping = time() - start
+    await m_reply.edit_text(
+        f"- اهلا حياتي 💕 {message.from_user.mention()}\n-  تم تعطيل امر كت"
+    )
+
+    
+@Client.on_message(filters.command("فيونا اقفلي الكت", [".", ""]) & ~filters.edited)
+@authorized_users_only
+async def stop_filterr(client: Client, message: Message):
+    start = time()
+    m_reply = await message.reply_text(
+        f"- اهلا حياتي 💕 {message.from_user.mention()}\n-  تم تعطيل امر كت"
+    )
+    obj = settingsApp.BotSettings()
+    obj.edit_in_file("open", "no")
+    delta_ping = time() - start
+    await m_reply.edit_text(
+        f"- اهلا حياتي 💕 {message.from_user.mention()}\n-  تم تعطيل امر كت"
+    )
+
+@Client.on_message(command(["Kstart", f"Kstart@fi0nabot"]) & ~filters.edited)
+@authorized_users_only
+async def start_filter(client: Client, message: Message):
+    start = time()
+    m_reply = await message.reply_text(
+        f"- اهلا حياتي 💕 {message.from_user.mention()}\n-  تم تفعيل امر كت"
+    )
+    obj = settingsApp.BotSettings()
+    obj.edit_in_file("open", "yes")
+    delta_ping = time() - start
+    await m_reply.edit_text(
+        f"- اهلا حياتي 💕 {message.from_user.mention()}\n-  تم تفعيل امر كت"
+    )
+    
+@Client.on_message(filters.command("فيونا شغلي الكت", [".", ""]) & ~filters.edited)
+@authorized_users_only
+async def start_filterrr(client: Client, message: Message):
+    start = time()
+    m_reply = await message.reply_text(
+        f"- اهلا حياتي 💕 {message.from_user.mention()}\n-  تم تفعيل امر كت"
+    )
+    obj = settingsApp.BotSettings()
+    obj.edit_in_file("open", "yes")
+    delta_ping = time() - start
+    await m_reply.edit_text(
+        f"-  اهلا حياتي 💕 {message.from_user.mention()}\n-  تم تفعيل امر كت"
+    )
+
 
 @Client.on_message(filters.regex("^كت$"))
 def searchMusic(c, m):
@@ -1305,59 +1362,3 @@ def searchMusic(c, m):
     except Exception as e:
         m.reply("حدث خطا راسل المطور\n- @X_A_R3")
 
-@Client.on_message(command(["Kstop", f"Kstop@fi0nabot", "تعطيل الكت"]) & ~filters.edited)
-@authorized_users_only
-async def stop_filter(client: Client, message: Message):
-    start = time()
-    m_reply = await message.reply_text(
-        f"- اهلا حياتي 💕 {message.from_user.mention()}\n-  تم تعطيل امر كت"
-    )
-    obj = settingsApp.BotSettings()
-    obj.edit_in_file("open", "no")
-    delta_ping = time() - start
-    await m_reply.edit_text(
-        f"- اهلا حياتي 💕 {message.from_user.mention()}\n-  تم تعطيل امر كت"
-    )
-
-    
-@Client.on_message(filters.command("فيونا اقفلي الكت", [".", ""]) & ~filters.edited)
-@authorized_users_only
-async def stop_filterr(client: Client, message: Message):
-    start = time()
-    m_reply = await message.reply_text(
-        f"- اهلا حياتي 💕 {message.from_user.mention()}\n-  تم تعطيل امر كت"
-    )
-    obj = settingsApp.BotSettings()
-    obj.edit_in_file("open", "no")
-    delta_ping = time() - start
-    await m_reply.edit_text(
-        f"- اهلا حياتي 💕 {message.from_user.mention()}\n-  تم تعطيل امر كت"
-    )
-
-@Client.on_message(command(["Kstart", f"Kstart@fi0nabot"]) & ~filters.edited)
-@authorized_users_only
-async def start_filter(client: Client, message: Message):
-    start = time()
-    m_reply = await message.reply_text(
-        f"- اهلا حياتي 💕 {message.from_user.mention()}\n-  تم تفعيل امر كت"
-    )
-    obj = settingsApp.BotSettings()
-    obj.edit_in_file("open", "yes")
-    delta_ping = time() - start
-    await m_reply.edit_text(
-        f"- اهلا حياتي 💕 {message.from_user.mention()}\n-  تم تفعيل امر كت"
-    )
-    
-@Client.on_message(filters.command("فيونا شغلي الكت", [".", ""]) & ~filters.edited)
-@authorized_users_only
-async def start_filterrr(client: Client, message: Message):
-    start = time()
-    m_reply = await message.reply_text(
-        f"- اهلا حياتي 💕 {message.from_user.mention()}\n-  تم تفعيل امر كت"
-    )
-    obj = settingsApp.BotSettings()
-    obj.edit_in_file("open", "yes")
-    delta_ping = time() - start
-    await m_reply.edit_text(
-        f"-  اهلا حياتي 💕 {message.from_user.mention()}\n-  تم تفعيل امر كت"
-    )
