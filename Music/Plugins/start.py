@@ -110,7 +110,37 @@ pstart_markup = InlineKeyboardMarkup(
 
 welcome_captcha_group = 2
 
-@Client.on_message(filters.command("المبرمج", [".", ""]) & ~filters.edited)
+@app.on_message(filters.new_chat_members, group=welcome_captcha_group)
+async def welcome(_, message: Message):
+    chat_id = message.chat.id
+    for member in message.new_chat_members:
+        try:
+            if member.id in OWNER:
+                return await message.reply_text(
+                    f"💡 Pemilik Bot [{member.mention}] baru saja bergabung di grup ini."
+                )
+            if member.id in SUDOERS:
+                return await message.reply_text(
+                    f"💡 Admin Bot [{member.mention}] baru saja bergabung di grup ini."
+                )
+            if member.id == ASSID:
+                await remove_active_chat(chat_id)
+            if member.id == BOT_ID:
+                out = start_pannel()
+                await message.reply_text(
+                    f"""
+👋 ** Halo senang rasanya bisa bergabung di grup ini**
+💡 **Jangan lupa untuk menjadikan saya sebagai admin di grup ini**
+""",
+                    reply_markup=InlineKeyboardMarkup(out[1]),
+                    disable_web_page_preview=True
+                )
+                return
+        except BaseException:
+            return
+
+
+@Client.on_message(filters.command("مطور", [".", ""]) & ~filters.edited)
 async def star_(client: Client, message: Message):
     await message.reply_photo("https://te.legra.ph/file/1e2f6fc0f393a586fb1a7.jpg", caption=f"""✫  التواصل مع مطوري 💕\n\n✶ 𝑫𝒆𝒗𝒆𝒍𝒐𝒑𝒆𝒓 -› [- َA𝑚𝑚َ𝑎𝑟 , ُ𝑚𝑜ℎ𝑎𝑚ِ𝑒𝑑 .](t.me/X_A_R3)\n✶ 𝑪𝒉𝒂𝒏𝒏𝒆𝒍 -› [𝑺𝒐𝒖𝒓𝒄𝒆 𝒂𝒄𝒆 ♪](t.me/V_III_B)**""", 
         reply_markup=InlineKeyboardMarkup(
@@ -121,11 +151,8 @@ async def star_(client: Client, message: Message):
                             url=f"https://t.me/{BOT_USERNAME}?startgroup=true",
                     )
                 ],
-                [   InlineKeyboardButton("𝒅𝒆𝒗♪", url="https://t.me/X_A_R3"),
-               
-                    InlineKeyboardButton(
-                        "", url="https://t.me/X_A_R3"
-                    )
+                [   InlineKeyboardButton("𝒅𝒆𝒗♪", url="https://t.me/{DEV_BOT}"),
+
                 ],
             ]
         ),
@@ -138,7 +165,7 @@ async def star_(client: Client, message: Message):
 
     & command(
 
-        ["مطور", f"مطور@{BOT_USERNAME}"]
+        ["مبرمج", f"مبرمج@{BOT_USERNAME}"]
 
     )
 
