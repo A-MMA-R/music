@@ -5,6 +5,17 @@ import time
 from random import randint
 from urllib.parse import urlparse
 
+from Music.config import GROUP, CHANNEL
+from Music import (
+    ASSID,
+    BOT_ID,
+    BOT_NAME,
+    BOT_USERNAME,
+    OWNER,
+    SUDOERS,
+    app,
+)
+
 import aiofiles
 import aiohttp
 import requests
@@ -16,7 +27,7 @@ from pyrogram.types import Message
 from youtube_search import YoutubeSearch
 from yt_dlp import YoutubeDL
 
-from Music.MusicUtlitis.helper.filters import command, other_filters
+from Music.MusicUtilities.helpers.filters import command, other_filters
 
 
 ydl_opts = {
