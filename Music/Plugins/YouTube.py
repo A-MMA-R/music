@@ -31,7 +31,7 @@ ydl_opts = {
 }
 
 Client.on_message(
-    command(["vsong", "نزيل","تحميل فديو","تنزيل فديو", f"vsong@{BOT_USERNAME}", "video", f"video@{BOT_USERNAME}"]) & ~filters.edited
+    command(["vsong", "تحميل", f"vsong@{BOT_USERNAME}", "video", f"video@{BOT_USERNAME}"]) & ~filters.edited
 )
 async def vsong(client, message):
     ydl_opts = {
