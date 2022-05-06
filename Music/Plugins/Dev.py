@@ -26,33 +26,6 @@ from pyrogram.types import (
     Message,
 )
 
-DEV_BOT = getenv("DEV_BOT")
-BOTID = getenv("BOTID")
-DEVID = getenv("DEVID")
-DEV_BOT1 = getenv("DEV_BOT1")
-NAME_BOT = getenv("NAME_BOT")
-
-def get_file_id(msg: Message):
-    if msg.media:
-        for message_type in (
-            "photo",
-            "animation",
-            "audio",
-            "document",
-            "video",
-            "video_note",
-            "voice",
-            # "contact",
-            # "dice",
-            # "poll",
-            # "location",
-            # "venue",
-            "sticker",
-        ):
-            obj = getattr(msg, message_type)
-            if obj:
-                setattr(obj, "message_type", message_type)
-                return obj
 
 @Client.on_message(
     command(["source", f"source@{BOT_USERNAME}","سورس","السورس"]) & filters.group & ~filters.edited
