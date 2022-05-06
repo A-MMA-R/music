@@ -1,3 +1,7 @@
+import asyncio
+import yt_dlp
+import psutil
+
 from Music.config import GROUP, CHANNEL
 from Music import (
     ASSID,
@@ -8,6 +12,35 @@ from Music import (
     SUDOERS,
     app,
 )
+
+DEV_BOT = getenv("DEV_BOT")
+BOTID = getenv("BOTID")
+DEVID = getenv("DEVID")
+DEV_BOT1 = getenv("DEV_BOT1")
+NAME_BOT = getenv("NAME_BOT")
+
+def get_file_id(msg: Message):
+    if msg.media:
+        for message_type in (
+            "photo",
+            "animation",
+            "audio",
+            "document",
+            "video",
+            "video_note",
+            "voice",
+            # "contact",
+            # "dice",
+            # "poll",
+            # "location",
+            # "venue",
+            "sticker",
+        ):
+            obj = getattr(msg, message_type)
+            if obj:
+                setattr(obj, "message_type", message_type)
+                return obj
+
 from pyrogram.types import CallbackQuery
 from pyrogram import Client, filters
 from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup, Message
