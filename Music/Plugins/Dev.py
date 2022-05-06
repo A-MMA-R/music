@@ -18,7 +18,7 @@ from Music.MusicUtilities.helpers.filters import command
 
 
 @Client.on_message(
-    (["source", f"source@{BOT_USERNAME}","سورس","السورس"]) & filters.group & ~filters.edited
+    command(["source", f"source@{BOT_USERNAME}","سورس","السورس"]) & filters.group & ~filters.edited
 )
 async def ssoyrce(client: Client, message: Message):
 
@@ -69,7 +69,7 @@ async def source(_, query: CallbackQuery):
 
 
 @Client.on_message(
-    (["developer", f"developer@{BOT_USERNAME}", "مطور" ,"المطور"]) & filters.group & ~filters.edited
+    command(["developer", f"developer@{BOT_USERNAME}", "مطور" ,"المطور"]) & filters.group & ~filters.edited
 )
 async def developer(client: Client, message: Message):
 
@@ -110,7 +110,7 @@ async def developer(client: Client, message: Message):
 
     
 @Client.on_message(
-    (["bot", f"bot@{BOT_USERNAME}", "بوت","البوت"]) & filters.group & ~filters.edited
+    command(["bot", f"bot@{BOT_USERNAME}", "بوت","البوت"]) & filters.group & ~filters.edited
 )
 async def gbot(client: Client, message: Message):
 
