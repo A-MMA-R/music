@@ -1,6 +1,6 @@
 
-
-from config import (
+from Music.config import GROUP, CHANNEL
+from Music import (
     ALIVE_IMG,
     ALIVE_NAME,
     BOT_NAME,
@@ -10,6 +10,7 @@ from config import (
     GROUP_SUPPORT,
     OWNER_NAME,
 )
+
 from pyrogram.types import CallbackQuery
 from pyrogram import Client, filters
 from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup, Message
