@@ -99,7 +99,7 @@ async def developer(client: Client, message: Message):
 
                     InlineKeyboardButton(
 
-                        name, url=f"https://t.me/{OWNER_NAME}") 
+                        name, url=f"https://t.me/{DEV_BOT}") 
 
                 ],[
 
