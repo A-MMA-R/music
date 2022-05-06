@@ -14,7 +14,7 @@ from pyrogram.types import CallbackQuery
 from pyrogram import Client, filters
 from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup, Message
 
-from Music.MusicU
+from Music.MusicUtilities.helpers.filters import command
 
 
 @Client.on_message(
