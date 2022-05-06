@@ -1,7 +1,6 @@
 
 from Music.config import GROUP, CHANNEL
 from Music import (
-    ALIVE_IMG,
     ALIVE_NAME,
     BOT_NAME,
     SOURCE, 
