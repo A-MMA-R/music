@@ -1,15 +1,13 @@
-
 from Music.config import GROUP, CHANNEL
 from Music import (
-    ALIVE_NAME,
+    ASSID,
+    BOT_ID,
     BOT_NAME,
-    SOURCE, 
-    ASSISTANT_NAME,
     BOT_USERNAME,
-    GROUP_SUPPORT,
-    OWNER_NAME,
+    OWNER,
+    SUDOERS,
+    app,
 )
-
 from pyrogram.types import CallbackQuery
 from pyrogram import Client, filters
 from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup, Message
