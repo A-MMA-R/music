@@ -12,6 +12,19 @@ from Music import (
     SUDOERS,
     app,
 )
+from pyrogram.types import CallbackQuery
+from pyrogram import Client, filters
+from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup, Message
+from Music.MusicUtilities.helpers.filters import command
+from pyrogram import Client, filters
+import re
+import sys
+from os import getenv
+from pyrogram.types import (
+    InlineKeyboardButton,
+    InlineKeyboardMarkup,
+    Message,
+)
 
 DEV_BOT = getenv("DEV_BOT")
 BOTID = getenv("BOTID")
@@ -40,13 +53,6 @@ def get_file_id(msg: Message):
             if obj:
                 setattr(obj, "message_type", message_type)
                 return obj
-
-from pyrogram.types import CallbackQuery
-from pyrogram import Client, filters
-from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup, Message
-
-from Music.MusicUtilities.helpers.filters import command
-
 
 @Client.on_message(
     command(["source", f"source@{BOT_USERNAME}","سورس","السورس"]) & filters.group & ~filters.edited
