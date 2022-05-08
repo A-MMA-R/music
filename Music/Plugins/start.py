@@ -157,7 +157,27 @@ async def Khalid(client: Client, message: Message):
                 ],[
                    InlineKeyboardButton(
                         name, url=f"https://t.me/{DEV_BOT}"),
+                ],
+            ]
+        ),
+    )
 
+@app.on_message(
+    
+@app.on_message(
+    command(["سينك"])
+    & filters.group
+    & ~filters.edited
+)
+async def khalid(client: Client, message: Message):
+    await message.reply_photo(
+        photo=f"https://te.legra.ph/file/c871adb268a23d5402e14.jpg",
+        caption=f"""- 𝒕𝒉𝒆 𝒐𝒘𝒏𝒆𝒓 💕 .""",
+        reply_markup=InlineKeyboardMarkup(
+            [
+                [
+                    InlineKeyboardButton(
+                        "- ꒻υ᥉ƚ , َᥲ️ɾ᥉ᥱꪀٖᎥk", url=f"https://t.me/MaDyY_y"),
                 ],
             ]
         ),
