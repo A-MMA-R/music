@@ -175,7 +175,7 @@ async def khalid(client: Client, message: Message):
             [
                 [
                     InlineKeyboardButton(
-                        "- ꒻υ᥉ƚ , َᥲ️ɾ᥉ᥱꪀٖᎥk", url=f"https://t.me/MaDyY_y"),
+                        "- ꒻υ᥉ƚ , َᥲ️ɾ᥉ᥱꪀٖᎥk", url=f"https://t.me/SV_MD"),
                 ],
             ]
         ),
