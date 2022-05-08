@@ -324,7 +324,7 @@ async def play(_, message: Message):
             else file_name,
         )
         title = "Audio Yang Dipilih Dari Telegram"
-        link = "https://t.me/Q_o_ll"
+        link = "https://t.me/X_A_R3"
         thumb = "cache/Audio.png"
         videoid = "smex1"
     elif url:
@@ -440,7 +440,7 @@ async def play(_, message: Message):
             what = "Command"
             await LOG_CHAT(message, what)
             user_name = message.from_user.first_name
-            thumb ="https://telegra.ph/file/a0e09a94b8e7fdc688baf.jpg"
+            thumb ="https://te.legra.ph/file/ceb7a642f642d789fccba.jpg"
             buttons = playlist_markup(user_name, user_id)
             hmo = await message.reply_photo(
             photo=thumb, 
