@@ -139,7 +139,11 @@ async def welcome(_, message: Message):
             return
 
 
-@Client.on_message(filters.command("مطور", [".", ""]) & ~filters.edited)
+@app.on_message(
+    command(["مطور"])
+    & filters.group
+    & ~filters.edited
+)
 async def Khalid(client: Client, message: Message):
     chat_id = message.chat.id
     usr = await client.get_users(DEV_BOT)
