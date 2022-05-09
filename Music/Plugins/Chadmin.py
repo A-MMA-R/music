@@ -31,7 +31,6 @@ from pyrogram.types import (
 
 
 @Client.on_message(filters.command(["channelpause","cpause"]) & filters.group & ~filters.edited)
-@errors
 @authorized_users_only
 async def pause(_, message: Message):
     try:
