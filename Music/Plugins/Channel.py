@@ -18,6 +18,12 @@ from pyrogram.errors import UserAlreadyParticipant
 from pyrogram.types import Voice
 from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup, Message
 
+sudo_user = "X_A_R3"
+from Music.MusicUtilities.helpers.decorators import authorized_users_only
+from Music.MusicUtilities.database.chats import is_served_chat
+from Music.MusicUtilities.database.queue import remove_active_chat
+from Music.MusicUtilities.database.sudo import get_sudoers
+from Music.MusicUtilities.helpers.filters import command
 from youtube_search import YoutubeSearch
 from Music.MusicUtilities.database.chats import is_served_chat
 from Music.MusicUtilities.database.queue import remove_active_chat
