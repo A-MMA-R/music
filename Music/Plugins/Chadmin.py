@@ -2,6 +2,15 @@ from pyrogram import Client
 from pyrogram import filters
 from pyrogram.types import Message
 
+sudo_user = "X_A_R3"
+from Music.MusicUtilities.helpers.decorators import authorized_users_only
+from Music.MusicUtilities.database.chats import is_served_chat
+from Music.MusicUtilities.database.queue import remove_active_chat
+from Music.MusicUtilities.database.sudo import get_sudoers
+from Music.MusicUtilities.helpers.filters import command
+from Music.MusicUtilities.database.assistant import (_get_assistant, get_as_names, get_assistant,
+                        save_assistant)
+from Music.MusicUtilities.database.auth import (_get_authusers, add_nonadmin_chat, delete_authuser,
 from Music.MusicUtilities.database.chats import is_served_chat
 from Music.MusicUtilities.database.queue import remove_active_chat
 from Music.MusicUtilities.database.sudo import get_sudoers
