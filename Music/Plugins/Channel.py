@@ -17,9 +17,8 @@ from pyrogram import filters
 from pyrogram.errors import UserAlreadyParticipant
 from pyrogram.types import Voice
 from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup, Message
-from Python_ARQ import ARQ
+
 from youtube_search import YoutubeSearch
-from AnkiVectorMusic.modules.play import generate_cover
 from Music.MusicUtilities.database.chats import is_served_chat
 from Music.MusicUtilities.database.queue import remove_active_chat
 from Music.MusicUtilities.database.sudo import get_sudoers
