@@ -80,7 +80,6 @@ async def pause(_, message: Message):
 @Client.on_message(
     filters.command(["الاستئناف", "استئنافف"]) & filters.group & ~filters.edited
 )
-@errors
 @authorized_users_only
 async def resume(_, message: Message):
     try:
@@ -104,7 +103,6 @@ async def resume(_, message: Message):
 @Client.on_message(
     filters.command(["الايقاف", "ايقافف"]) & filters.group & ~filters.edited
 )
-@errors
 @authorized_users_only
 async def stop(_, message: Message):
     try:
@@ -130,7 +128,6 @@ async def stop(_, message: Message):
 @Client.on_message(
     filters.command(["التالي", "تاليي"]) & filters.group & ~filters.edited
 )
-@errors
 @authorized_users_only
 async def skip(_, message: Message):
     global que
@@ -163,7 +160,6 @@ async def skip(_, message: Message):
 @Client.on_message(
     filters.command(["الكتم", "كتم"]) & filters.group & ~filters.edited
 )
-@errors
 @authorized_users_only
 async def mute(_, message: Message):
     global que
@@ -192,7 +188,6 @@ async def mute(_, message: Message):
 @Client.on_message(
     filters.command(["الغاء الكتم", "الغاء كتم"]) & filters.group & ~filters.edited
 )
-@errors
 @authorized_users_only
 async def unmute(_, message: Message):
     global que
@@ -219,7 +214,6 @@ async def unmute(_, message: Message):
 
 
 @Client.on_message(filters.command("تحديث المشرفين"))
-@errors
 async def admincache(client, message: Message):
     try:
         conchat = await client.get_chat(message.chat.id)
