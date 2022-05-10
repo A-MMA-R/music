@@ -216,7 +216,6 @@ async def p_cb(b, cb):
 @Client.on_callback_query(
     filters.regex(pattern=r"^(cplay|cpause|cskip|cleave|cpuse|cresume|cmenu|ccls)$")
 )
-@cb_admin_check
 async def m_cb(b, cb):
     global que
     if (
