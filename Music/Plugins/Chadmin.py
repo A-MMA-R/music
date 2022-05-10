@@ -58,7 +58,6 @@ from pyrogram.types import (
 @Client.on_message(
     filters.command(["المؤقت", "مؤقتت"]) & filters.group & ~filters.edited
 )
-@errors
 @authorized_users_only
 async def pause(_, message: Message):
     try:
