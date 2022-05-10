@@ -1,6 +1,7 @@
 import os
 from os import path
 from typing import Callable
+from asyncio import QueueEmpty
 
 import aiofiles
 import aiohttp
